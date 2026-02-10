@@ -1,0 +1,6 @@
+@KuaforSepeti.API_HostAddress = http://localhost:5276
+
+GET {{KuaforSepeti.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
