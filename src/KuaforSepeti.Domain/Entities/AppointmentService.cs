@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Many-to-many relationship between Appointment and Service.
@@ -41,3 +41,4 @@ public class AppointmentService : BaseEntity
     /// </summary>
     public virtual Service Service { get; set; } = null!;
 }
+

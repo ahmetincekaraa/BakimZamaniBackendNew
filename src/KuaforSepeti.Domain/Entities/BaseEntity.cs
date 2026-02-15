@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
-using KuaforSepeti.Domain.Helpers;
+using BakimZamani.Domain.Helpers;
 
 /// <summary>
 /// Base entity class with common properties for all entities.
@@ -32,3 +32,4 @@ public abstract class BaseEntity
     /// </summary>
     public DateTime? DeletedAt { get; set; }
 }
+

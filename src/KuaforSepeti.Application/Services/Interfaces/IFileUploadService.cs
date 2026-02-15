@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
 /// <summary>
 /// File upload service interface for handling image uploads.
@@ -23,3 +23,4 @@ public interface IFileUploadService
     /// </summary>
     string GetImageUrl(string relativePath);
 }
+

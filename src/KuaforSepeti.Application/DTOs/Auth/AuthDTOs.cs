@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Application.DTOs.Auth;
+﻿namespace BakimZamani.Application.DTOs.Auth;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// User registration request.
@@ -105,3 +105,4 @@ public class UpdateFcmTokenRequest
 {
     public string FcmToken { get; set; } = string.Empty;
 }
+

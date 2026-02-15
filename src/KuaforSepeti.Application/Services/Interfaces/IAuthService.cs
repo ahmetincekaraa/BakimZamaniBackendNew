@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Application.DTOs.Auth;
-using KuaforSepeti.Application.DTOs.Common;
+using BakimZamani.Application.DTOs.Auth;
+using BakimZamani.Application.DTOs.Common;
 
 /// <summary>
 /// Authentication service interface.
@@ -19,3 +19,4 @@ public interface IAuthService
     Task<ApiResponse> UpdateFcmTokenAsync(string userId, UpdateFcmTokenRequest request);
     Task<ApiResponse> LogoutAsync(string userId);
 }
+

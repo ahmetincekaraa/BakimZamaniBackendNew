@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Staff entity representing salon employees.
@@ -76,3 +76,4 @@ public class Staff : BaseEntity
     /// </summary>
     public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 }
+

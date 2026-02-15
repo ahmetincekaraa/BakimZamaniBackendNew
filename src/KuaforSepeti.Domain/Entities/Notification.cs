@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Notification entity for push and in-app notifications.
@@ -58,3 +58,4 @@ public class Notification : BaseEntity
     /// </summary>
     public virtual User User { get; set; } = null!;
 }
+

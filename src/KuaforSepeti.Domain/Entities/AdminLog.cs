@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Admin action log entity for audit trail.
@@ -48,3 +48,4 @@ public class AdminLog : BaseEntity
     // Navigation properties
     public virtual User Admin { get; set; } = null!;
 }
+

@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Enums;
+﻿namespace BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Notification types for push and in-app notifications.
@@ -40,3 +40,4 @@ public enum NotificationType
     /// </summary>
     Promotion = 6
 }
+

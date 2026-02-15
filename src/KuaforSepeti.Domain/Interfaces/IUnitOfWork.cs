@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Interfaces;
+﻿namespace BakimZamani.Domain.Interfaces;
 
 /// <summary>
 /// Unit of Work pattern interface.
@@ -25,3 +25,4 @@ public interface IUnitOfWork : IDisposable
     /// </summary>
     Task RollbackTransactionAsync(CancellationToken cancellationToken = default);
 }
+

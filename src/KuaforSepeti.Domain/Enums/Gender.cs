@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Enums;
+﻿namespace BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Gender types for services and users.
@@ -20,3 +20,4 @@ public enum Gender
     /// </summary>
     Unisex = 2
 }
+

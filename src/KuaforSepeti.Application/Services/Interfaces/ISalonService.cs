@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Application.DTOs.Common;
-using KuaforSepeti.Application.DTOs.Salon;
+using BakimZamani.Application.DTOs.Common;
+using BakimZamani.Application.DTOs.Salon;
 
 /// <summary>
 /// Salon service interface.
@@ -32,4 +32,5 @@ public interface ISalonService
     Task<ApiResponse<List<WorkingHoursResponse>>> GetWorkingHoursAsync(string salonId);
     Task<ApiResponse<List<WorkingHoursResponse>>> UpdateWorkingHoursAsync(string salonId, string ownerId, UpdateWorkingHoursRequest request);
 }
+
 

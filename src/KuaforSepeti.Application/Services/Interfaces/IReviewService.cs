@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Application.DTOs.Common;
-using KuaforSepeti.Application.DTOs.Appointment;
+using BakimZamani.Application.DTOs.Common;
+using BakimZamani.Application.DTOs.Appointment;
 
 /// <summary>
 /// Review service interface.
@@ -13,3 +13,4 @@ public interface IReviewService
     Task<ApiResponse<ReviewResponse>> ReplyToReviewAsync(string reviewId, string ownerId, ReplyToReviewRequest request);
     Task<ApiResponse> DeleteReviewAsync(string reviewId, string userId);
 }
+

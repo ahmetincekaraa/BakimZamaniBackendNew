@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
 /// <summary>
 /// Admin log list item.
@@ -15,3 +15,4 @@ public class AdminLogItem
     public string? Details { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+

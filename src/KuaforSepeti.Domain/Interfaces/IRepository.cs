@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Domain.Interfaces;
+﻿namespace BakimZamani.Domain.Interfaces;
 
-using KuaforSepeti.Domain.Entities;
+using BakimZamani.Domain.Entities;
 using System.Linq.Expressions;
 
 /// <summary>
@@ -64,3 +64,4 @@ public interface IRepository<T> where T : BaseEntity
     /// </summary>
     Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null, CancellationToken cancellationToken = default);
 }
+

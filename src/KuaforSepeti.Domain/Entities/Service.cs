@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Service entity representing services offered by salons.
@@ -88,3 +88,4 @@ public class Service : BaseEntity
     /// </summary>
     public virtual ICollection<AppointmentService> AppointmentServices { get; set; } = new List<AppointmentService>();
 }
+

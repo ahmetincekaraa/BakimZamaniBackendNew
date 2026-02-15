@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Common;
+﻿namespace BakimZamani.Application.DTOs.Common;
 
 /// <summary>
 /// Paginated result wrapper.
@@ -45,3 +45,4 @@ public class PaginationRequest
         set => _pageSize = value < 1 ? 10 : (value > 100 ? 100 : value);
     }
 }
+

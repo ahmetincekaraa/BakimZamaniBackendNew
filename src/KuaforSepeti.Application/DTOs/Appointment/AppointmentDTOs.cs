@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Application.DTOs.Appointment;
+﻿namespace BakimZamani.Application.DTOs.Appointment;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Available time slot response.
@@ -171,3 +171,4 @@ public class ReplyToReviewRequest
 {
     public string Reply { get; set; } = string.Empty;
 }
+

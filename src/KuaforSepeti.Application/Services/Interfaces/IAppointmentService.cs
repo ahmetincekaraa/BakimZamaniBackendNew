@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Application.DTOs.Common;
-using KuaforSepeti.Application.DTOs.Appointment;
+using BakimZamani.Application.DTOs.Common;
+using BakimZamani.Application.DTOs.Appointment;
 
 /// <summary>
 /// Appointment service interface.
@@ -27,3 +27,4 @@ public interface IAppointmentService
     // Reschedule
     Task<ApiResponse<AppointmentResponse>> RescheduleAppointmentAsync(string appointmentId, string userId, RescheduleAppointmentRequest request);
 }
+

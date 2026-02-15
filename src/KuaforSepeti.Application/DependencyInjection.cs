@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application;
+﻿namespace BakimZamani.Application;
 
 using FluentValidation;
-using KuaforSepeti.Application.Mappings;
+using BakimZamani.Application.Mappings;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -21,4 +21,5 @@ public static class DependencyInjection
         return services;
     }
 }
+
 

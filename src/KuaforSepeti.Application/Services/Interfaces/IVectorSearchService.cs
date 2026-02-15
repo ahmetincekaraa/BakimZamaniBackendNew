@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Application.DTOs.Common;
-using KuaforSepeti.Application.DTOs.Salon;
+using BakimZamani.Application.DTOs.Common;
+using BakimZamani.Application.DTOs.Salon;
 
 /// <summary>
 /// Vector search service interface for semantic search.
@@ -11,7 +11,7 @@ public interface IVectorSearchService
     /// <summary>
     /// Search salons by service name using semantic similarity.
     /// </summary>
-    /// <param name="query">Search query (e.g., "protez tırnak", "saç boyama")</param>
+    /// <param name="query">Search query (e.g., "protez tÄ±rnak", "saÃ§ boyama")</param>
     /// <param name="city">Optional city filter</param>
     /// <param name="limit">Maximum number of results</param>
     Task<ApiResponse<List<SalonListResponse>>> SearchSalonsByServiceAsync(string query, string? city = null, int limit = 20);
@@ -26,3 +26,4 @@ public interface IVectorSearchService
     /// </summary>
     Task<int> UpdateAllServiceEmbeddingsAsync();
 }
+

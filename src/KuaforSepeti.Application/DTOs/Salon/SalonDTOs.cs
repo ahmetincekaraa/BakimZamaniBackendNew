@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Application.DTOs.Salon;
+﻿namespace BakimZamani.Application.DTOs.Salon;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Salon list item response.
@@ -40,6 +40,9 @@ public class SalonDetailResponse
     public List<string> GalleryImages { get; set; } = new();
     public Gender TargetGender { get; set; }
     public bool IsVerified { get; set; }
+    public string? TaxNumber { get; set; }
+    // BusinessLicenseUrl is not returned to public usually, but maybe to owner.
+    public string? BusinessLicenseUrl { get; set; } 
     public int MinAdvanceBookingHours { get; set; }
     public int MaxAdvanceBookingDays { get; set; }
     public int CancellationPolicyHours { get; set; }
@@ -105,6 +108,26 @@ public class CreateSalonRequest
     public double? Latitude { get; set; }
     public double? Longitude { get; set; }
     public Gender TargetGender { get; set; } = Gender.Female;
+    public string? TaxNumber { get; set; }
+    public string? BusinessLicenseUrl { get; set; }
+    public List<string>? GalleryImages { get; set; }
+}
+
+public class CreateSalonRegisterRequest
+{
+    public string Name { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public string Address { get; set; } = string.Empty;
+    public string City { get; set; } = string.Empty;
+    public string District { get; set; } = string.Empty;
+    public string PhoneNumber { get; set; } = string.Empty;
+    public double? Latitude { get; set; }
+    public double? Longitude { get; set; }
+    public Gender TargetGender { get; set; } = Gender.Female;
+    
+    public string? TaxNumber { get; set; }
+    public Microsoft.AspNetCore.Http.IFormFile? BusinessLicense { get; set; }
+    public List<Microsoft.AspNetCore.Http.IFormFile>? SalonPhotos { get; set; }
 }
 
 /// <summary>
@@ -193,3 +216,4 @@ public class SalonSearchRequest
     public int PageSize { get; set; } = 10;
     public string? SortBy { get; set; } // rating, distance, name
 }
+

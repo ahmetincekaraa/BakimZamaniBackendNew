@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Common;
+﻿namespace BakimZamani.Application.DTOs.Common;
 
 /// <summary>
 /// Generic API response wrapper.
@@ -46,4 +46,5 @@ public class ApiResponse
     public static ApiResponse SuccessResponse(string? message = null) => Ok(message);
     public static ApiResponse FailureResponse(string message, List<string>? errors = null) => Fail(message, errors);
 }
+
 

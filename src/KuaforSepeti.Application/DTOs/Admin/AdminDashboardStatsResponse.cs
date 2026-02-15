@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
 /// <summary>
 /// Admin dashboard statistics response.
@@ -29,3 +29,4 @@ public class AdminDashboardStatsResponse
     /// <summary>Today's cancelled appointments.</summary>
     public int CancelledToday { get; set; }
 }
+

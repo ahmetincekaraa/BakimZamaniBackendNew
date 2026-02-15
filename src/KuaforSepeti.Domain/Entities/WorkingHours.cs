@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Working hours for salon or specific staff.
@@ -56,3 +56,4 @@ public class WorkingHours : BaseEntity
     /// </summary>
     public virtual Staff? Staff { get; set; }
 }
+

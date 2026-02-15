@@ -1,10 +1,10 @@
-namespace KuaforSepeti.Application.Mappings;
+﻿namespace BakimZamani.Application.Mappings;
 
 using AutoMapper;
-using KuaforSepeti.Application.DTOs.Auth;
-using KuaforSepeti.Application.DTOs.Salon;
-using KuaforSepeti.Application.DTOs.Appointment;
-using KuaforSepeti.Domain.Entities;
+using BakimZamani.Application.DTOs.Auth;
+using BakimZamani.Application.DTOs.Salon;
+using BakimZamani.Application.DTOs.Appointment;
+using BakimZamani.Domain.Entities;
 using System.Text.Json;
 
 /// <summary>
@@ -35,7 +35,14 @@ public class MappingProfile : Profile
                     dest.GalleryImages = new List<string>();
                 }
             });
-        CreateMap<CreateSalonRequest, Salon>();
+        CreateMap<CreateSalonRequest, Salon>()
+            .AfterMap((src, dest) =>
+            {
+                if (src.GalleryImages != null)
+                {
+                    dest.GalleryImagesJson = JsonSerializer.Serialize(src.GalleryImages);
+                }
+            });
         CreateMap<UpdateSalonRequest, Salon>()
             .AfterMap((src, dest) =>
             {
@@ -81,4 +88,5 @@ public class MappingProfile : Profile
         CreateMap<CreateReviewRequest, Review>();
     }
 }
+
 

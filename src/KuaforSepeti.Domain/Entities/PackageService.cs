@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Many-to-many relationship between ServicePackage and Service.
@@ -31,3 +31,4 @@ public class PackageService : BaseEntity
     /// </summary>
     public virtual Service Service { get; set; } = null!;
 }
+

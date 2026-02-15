@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// User entity for customers, salon owners, staff, and admins.
@@ -98,3 +98,4 @@ public class User : BaseEntity
     /// </summary>
     public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
 }
+

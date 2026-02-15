@@ -1,8 +1,8 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Application.DTOs.Admin;
-using KuaforSepeti.Application.DTOs.Common;
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Application.DTOs.Admin;
+using BakimZamani.Application.DTOs.Common;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Admin-specific service interface.
@@ -37,7 +37,7 @@ public interface IAdminService
     /// <summary>
     /// Activate a suspended salon.
     /// </summary>
-    Task<ApiResponse> ActivateSalonAsync(string salonId);
+    Task<ApiResponse> ActivateSalonAsync(string salonId, string adminId);
 
     /// <summary>
     /// Get all admin users.
@@ -47,7 +47,7 @@ public interface IAdminService
     /// <summary>
     /// Delete a salon with reason.
     /// </summary>
-    Task<ApiResponse> DeleteSalonAsync(string salonId, string reason);
+    Task<ApiResponse> DeleteSalonAsync(string salonId, string reason, string adminId);
 
     /// <summary>
     /// Get recent salons for dashboard (last 5).
@@ -79,17 +79,17 @@ public interface IAdminService
     /// <summary>
     /// Suspend a user (deactivate).
     /// </summary>
-    Task<ApiResponse> SuspendUserAsync(string userId);
+    Task<ApiResponse> SuspendUserAsync(string userId, string adminId);
 
     /// <summary>
     /// Activate a suspended user.
     /// </summary>
-    Task<ApiResponse> ActivateUserAsync(string userId);
+    Task<ApiResponse> ActivateUserAsync(string userId, string adminId);
 
     /// <summary>
     /// Update user role.
     /// </summary>
-    Task<ApiResponse> UpdateUserRoleAsync(string userId, UserRole newRole);
+    Task<ApiResponse> UpdateUserRoleAsync(string userId, UserRole newRole, string adminId);
 
     #endregion
 
@@ -103,12 +103,12 @@ public interface IAdminService
     /// <summary>
     /// Hide a review (set IsVisible = false).
     /// </summary>
-    Task<ApiResponse> HideReviewAsync(string reviewId);
+    Task<ApiResponse> HideReviewAsync(string reviewId, string adminId);
 
     /// <summary>
     /// Show a hidden review (set IsVisible = true).
     /// </summary>
-    Task<ApiResponse> ShowReviewAsync(string reviewId);
+    Task<ApiResponse> ShowReviewAsync(string reviewId, string adminId);
 
     #endregion
 
@@ -118,6 +118,21 @@ public interface IAdminService
     /// Get monthly trend data for the last 6 months.
     /// </summary>
     Task<ApiResponse<List<MonthlyTrendData>>> GetMonthlyTrendsAsync();
+
+    /// <summary>
+    /// Get detailed report for a date range.
+    /// </summary>
+    Task<ApiResponse<DetailedReportData>> GetDetailedReportAsync(DateTime startDate, DateTime endDate);
+
+    /// <summary>
+    /// Get revenue summary with breakdowns.
+    /// </summary>
+    Task<ApiResponse<RevenueSummary>> GetRevenueSummaryAsync(DateTime startDate, DateTime endDate);
+
+    /// <summary>
+    /// Get salon-level revenue list with pagination.
+    /// </summary>
+    Task<ApiResponse<PaginatedResult<SalonRevenueItem>>> GetSalonRevenuesAsync(DateTime startDate, DateTime endDate, int pageNumber = 1, int pageSize = 20, string? sortBy = null);
 
     #endregion
 
@@ -158,4 +173,50 @@ public interface IAdminService
     Task LogAdminActionAsync(string adminId, string adminName, string action, string targetEntity, string? targetId = null, string? targetName = null, string? details = null);
 
     #endregion
+
+    #region Campaigns
+
+    /// <summary>
+    /// Get all campaigns with pagination.
+    /// </summary>
+    Task<ApiResponse<PaginatedResult<CampaignListItem>>> GetCampaignsAsync(int pageNumber = 1, int pageSize = 20);
+
+    /// <summary>
+    /// Get campaign details.
+    /// </summary>
+    Task<ApiResponse<CampaignDetailItem>> GetCampaignDetailAsync(string campaignId);
+
+    /// <summary>
+    /// Create a new campaign.
+    /// </summary>
+    Task<ApiResponse> CreateCampaignAsync(CreateCampaignRequest request, string adminId);
+
+    /// <summary>
+    /// Update an existing campaign.
+    /// </summary>
+    Task<ApiResponse> UpdateCampaignAsync(string campaignId, UpdateCampaignRequest request, string adminId);
+
+    /// <summary>
+    /// Delete a campaign.
+    /// </summary>
+    Task<ApiResponse> DeleteCampaignAsync(string campaignId, string adminId);
+
+    #endregion
+
+    #region Content Management
+
+    // Announcements
+    Task<ApiResponse<List<AnnouncementListItem>>> GetAnnouncementsAsync();
+    Task<ApiResponse> CreateAnnouncementAsync(CreateAnnouncementRequest request, string adminId);
+    Task<ApiResponse> UpdateAnnouncementAsync(string id, UpdateAnnouncementRequest request, string adminId);
+    Task<ApiResponse> DeleteAnnouncementAsync(string id, string adminId);
+
+    // FAQs
+    Task<ApiResponse<List<FAQListItem>>> GetFAQsAsync();
+    Task<ApiResponse> CreateFAQAsync(CreateFAQRequest request, string adminId);
+    Task<ApiResponse> UpdateFAQAsync(string id, UpdateFAQRequest request, string adminId);
+    Task<ApiResponse> DeleteFAQAsync(string id, string adminId);
+
+    #endregion
 }
+

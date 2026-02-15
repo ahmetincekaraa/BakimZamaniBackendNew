@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
 /// <summary>
 /// Salon list item for admin panel.
@@ -48,16 +48,16 @@ public class AdminSalonDetail
     public int TotalStaff { get; set; }
     public int TotalServices { get; set; }
     
-    // Randevu İstatistikleri (Tüm zamanlar)
-    public int TotalAppointments { get; set; }      // Toplam başvuru
+    // Randevu Ä°statistikleri (TÃ¼m zamanlar)
+    public int TotalAppointments { get; set; }      // Toplam baÅŸvuru
     public int CompletedAppointments { get; set; }  // Tamamlanan
-    public int PendingAppointments { get; set; }    // Bekleyen (anlık)
-    public int CancelledAppointments { get; set; }  // İptal edilen
+    public int PendingAppointments { get; set; }    // Bekleyen (anlÄ±k)
+    public int CancelledAppointments { get; set; }  // Ä°ptal edilen
     
-    // Platform Katkısı
-    public int TotalCustomers { get; set; }         // Uygulamamızdan giden benzersiz müşteri sayısı
-    public decimal TotalRevenue { get; set; }       // Toplam kazanç (tüm zamanlar)
-    public decimal MonthlyRevenue { get; set; }     // Bu ayki kazanç
+    // Platform KatkÄ±sÄ±
+    public int TotalCustomers { get; set; }         // UygulamamÄ±zdan giden benzersiz mÃ¼ÅŸteri sayÄ±sÄ±
+    public decimal TotalRevenue { get; set; }       // Toplam kazanÃ§ (tÃ¼m zamanlar)
+    public decimal MonthlyRevenue { get; set; }     // Bu ayki kazanÃ§
 
     // Audit Info
     public string? ApprovedByAdminName { get; set; }
@@ -121,3 +121,4 @@ public class AdminSalonFilterRequest
     public int PageNumber { get; set; } = 1;
     public int PageSize { get; set; } = 20;
 }
+

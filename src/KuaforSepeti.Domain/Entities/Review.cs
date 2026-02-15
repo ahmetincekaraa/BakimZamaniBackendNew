@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Review entity for customer feedback on salons.
@@ -56,3 +56,4 @@ public class Review : BaseEntity
     /// </summary>
     public virtual User Customer { get; set; } = null!;
 }
+

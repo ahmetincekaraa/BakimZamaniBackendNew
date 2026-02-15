@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Enums;
+﻿namespace BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Service categories for salon services.
@@ -65,3 +65,4 @@ public enum ServiceCategory
     /// </summary>
     Other = 99
 }
+

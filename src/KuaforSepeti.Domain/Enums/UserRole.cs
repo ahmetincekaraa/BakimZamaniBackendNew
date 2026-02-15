@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Enums;
+﻿namespace BakimZamani.Domain.Enums;
 
 /// <summary>
 /// User roles in the system.
@@ -25,3 +25,4 @@ public enum UserRole
     /// </summary>
     Admin = 3
 }
+

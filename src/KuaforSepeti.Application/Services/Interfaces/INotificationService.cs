@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Application.Services.Interfaces;
+﻿namespace BakimZamani.Application.Services.Interfaces;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Notification service interface.
@@ -31,3 +31,4 @@ public class NotificationDto
     public string? RelatedEntityId { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+

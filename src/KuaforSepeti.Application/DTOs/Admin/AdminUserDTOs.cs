@@ -1,7 +1,7 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
-using KuaforSepeti.Domain.Enums;
-using KuaforSepeti.Application.DTOs.Common;
+using BakimZamani.Domain.Enums;
+using BakimZamani.Application.DTOs.Common;
 
 public class AdminUserListItem
 {
@@ -36,3 +36,4 @@ public class UpdateUserRoleRequest
 {
     public UserRole Role { get; set; }
 }
+

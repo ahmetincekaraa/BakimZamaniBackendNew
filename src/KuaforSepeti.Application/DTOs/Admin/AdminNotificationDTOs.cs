@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
 /// <summary>
 /// Admin notification item.
@@ -14,3 +14,4 @@ public class AdminNotificationItem
     public bool IsRead { get; set; }
     public DateTime CreatedAt { get; set; }
 }
+

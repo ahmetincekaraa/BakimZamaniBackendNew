@@ -1,6 +1,6 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
-using KuaforSepeti.Domain.Enums;
+using BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Salon entity representing a beauty salon or barbershop.
@@ -143,6 +143,16 @@ public class Salon : BaseEntity
     public string? Email { get; set; }
 
     /// <summary>
+    /// Tax Identification Number (Vergi NumarasÄ±).
+    /// </summary>
+    public string? TaxNumber { get; set; }
+
+    /// <summary>
+    /// URL to the business license/permit document (Ä°ÅŸ Yeri RuhsatÄ±).
+    /// </summary>
+    public string? BusinessLicenseUrl { get; set; }
+
+    /// <summary>
     /// Salon amenities as JSON array (WiFi, Parking, AC, Tea/Coffee, etc.)
     /// </summary>
     public string? AmenitiesJson { get; set; }
@@ -192,3 +202,4 @@ public class Salon : BaseEntity
     public DateTime? SuspendedAt { get; set; }
     public virtual User? SuspendedByAdmin { get; set; }
 }
+

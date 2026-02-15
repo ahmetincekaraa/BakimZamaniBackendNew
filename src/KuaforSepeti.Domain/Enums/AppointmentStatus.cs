@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Enums;
+﻿namespace BakimZamani.Domain.Enums;
 
 /// <summary>
 /// Appointment status states.
@@ -35,3 +35,4 @@ public enum AppointmentStatus
     /// </summary>
     NoShow = 5
 }
+

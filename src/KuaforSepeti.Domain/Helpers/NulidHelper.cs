@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Helpers;
+﻿namespace BakimZamani.Domain.Helpers;
 
 using NUlid;
 
@@ -71,3 +71,4 @@ public static class NulidHelper
         return ulid.Time;
     }
 }
+

@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
 /// <summary>
 /// Review list item for admin panel.
@@ -32,3 +32,4 @@ public class AdminReviewFilterRequest
     public string? SalonId { get; set; }
     public string? SearchTerm { get; set; }
 }
+

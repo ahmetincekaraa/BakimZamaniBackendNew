@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Many-to-many relationship between Staff and Service.
@@ -26,3 +26,4 @@ public class StaffService : BaseEntity
     /// </summary>
     public virtual Service Service { get; set; } = null!;
 }
+

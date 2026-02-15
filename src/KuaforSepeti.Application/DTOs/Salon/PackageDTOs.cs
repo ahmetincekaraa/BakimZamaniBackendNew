@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Salon;
+﻿namespace BakimZamani.Application.DTOs.Salon;
 
 /// <summary>
 /// Service package response DTO.
@@ -61,3 +61,4 @@ public class UpdatePackageRequest
     public bool? IsActive { get; set; }
     public List<PackageServiceInput>? Services { get; set; }
 }
+

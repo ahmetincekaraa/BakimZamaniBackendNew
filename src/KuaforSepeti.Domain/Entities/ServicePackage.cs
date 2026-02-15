@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Domain.Entities;
+﻿namespace BakimZamani.Domain.Entities;
 
 /// <summary>
 /// Service package entity - a bundle of multiple services with a special price.
@@ -11,7 +11,7 @@ public class ServicePackage : BaseEntity
     public string SalonId { get; set; } = string.Empty;
 
     /// <summary>
-    /// Package name (e.g., "Gelin Paketi", "VIP Bakım").
+    /// Package name (e.g., "Gelin Paketi", "VIP BakÄ±m").
     /// </summary>
     public string Name { get; set; } = string.Empty;
 
@@ -61,3 +61,4 @@ public class ServicePackage : BaseEntity
     /// </summary>
     public virtual ICollection<PackageService> PackageServices { get; set; } = new List<PackageService>();
 }
+

@@ -1,4 +1,4 @@
-namespace KuaforSepeti.Application.DTOs.Admin;
+﻿namespace BakimZamani.Application.DTOs.Admin;
 
 /// <summary>
 /// Monthly trend data for dashboard charts.
@@ -13,3 +13,4 @@ public class MonthlyTrendData
     public decimal Revenue { get; set; }
     public int Reviews { get; set; }
 }
+
