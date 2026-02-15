@@ -694,8 +694,10 @@ public class AdminService : IAdminService
 
     public async Task<ApiResponse<List<MonthlyTrendData>>> GetMonthlyTrendsAsync()
     {
+    public async Task<ApiResponse<List<MonthlyTrendData>>> GetMonthlyTrendsAsync()
+    {
         var sixMonthsAgo = DateTime.UtcNow.AddMonths(-5);
-        var startDate = new DateTime(sixMonthsAgo.Year, sixMonthsAgo.Month, 1);
+        var startDate = new DateTime(sixMonthsAgo.Year, sixMonthsAgo.Month, 1, 0, 0, 0, DateTimeKind.Utc);
 
         var months = Enumerable.Range(0, 6).Select(i => startDate.AddMonths(i)).ToList();
 
@@ -739,9 +741,9 @@ public class AdminService : IAdminService
 
     public async Task<ApiResponse<DetailedReportData>> GetDetailedReportAsync(DateTime startDate, DateTime endDate)
     {
-        // Normalize dates
-        startDate = startDate.Date;
-        endDate = endDate.Date.AddDays(1).AddTicks(-1); // End of day
+        // Normalize dates to UTC
+        startDate = DateTime.SpecifyKind(startDate, DateTimeKind.Utc).Date;
+        endDate = DateTime.SpecifyKind(endDate, DateTimeKind.Utc).Date.AddDays(1).AddTicks(-1); // End of day
 
         // ==== Appointments ====
         var appointments = await _context.Appointments
@@ -867,6 +869,9 @@ public class AdminService : IAdminService
 
     public async Task<ApiResponse<RevenueSummary>> GetRevenueSummaryAsync(DateTime startDate, DateTime endDate)
     {
+        startDate = DateTime.SpecifyKind(startDate, DateTimeKind.Utc);
+        endDate = DateTime.SpecifyKind(endDate, DateTimeKind.Utc);
+
         var completedAppointments = await _context.Appointments
             .Where(a => a.CreatedAt >= startDate && a.CreatedAt <= endDate && a.Status == AppointmentStatus.Completed)
             .Select(a => new { a.TotalPrice, a.CreatedAt, a.SalonId })
@@ -996,6 +1001,9 @@ public class AdminService : IAdminService
 
     public async Task<ApiResponse<PaginatedResult<SalonRevenueItem>>> GetSalonRevenuesAsync(DateTime startDate, DateTime endDate, int pageNumber = 1, int pageSize = 20, string? sortBy = null)
     {
+        startDate = DateTime.SpecifyKind(startDate, DateTimeKind.Utc);
+        endDate = DateTime.SpecifyKind(endDate, DateTimeKind.Utc);
+
         var salonRevData = await _context.Appointments
             .Where(a => a.CreatedAt >= startDate && a.CreatedAt <= endDate && a.Status == AppointmentStatus.Completed)
             .GroupBy(a => a.SalonId)
