@@ -11,20 +11,20 @@ infra_*
 msbuild.*
 run_*
 
-src/KuaforSepeti.API/bin
-src/KuaforSepeti.API/obj
-src/KuaforSepeti.API/log.*
+src/BakimZamani.API/bin
+src/BakimZamani.API/obj
+src/BakimZamani.API/log.*
 
-src/KuaforSepeti.Application/bin
-src/KuaforSepeti.Application/obj
-src/KuaforSepeti.Application/log.*
+src/BakimZamani.Application/bin
+src/BakimZamani.Application/obj
+src/BakimZamani.Application/log.*
 
-src/KuaforSepeti.Domain/log.*
-src/KuaforSepeti.Domain/obj
-src/KuaforSepeti.Domain/bin
+src/BakimZamani.Domain/log.*
+src/BakimZamani.Domain/obj
+src/BakimZamani.Domain/bin
 
 
-src/KuaforSepeti.Infrastructure/bin
-src/KuaforSepeti.Infrastructure/obj
-src/KuaforSepeti.Infrastructure/build_*
-src/KuaforSepeti.Infrastructure/log.*
+src/BakimZamani.Infrastructure/bin
+src/BakimZamani.Infrastructure/obj
+src/BakimZamani.Infrastructure/build_*
+src/BakimZamani.Infrastructure/log.*
