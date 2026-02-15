@@ -694,8 +694,7 @@ public class AdminService : IAdminService
 
     public async Task<ApiResponse<List<MonthlyTrendData>>> GetMonthlyTrendsAsync()
     {
-    public async Task<ApiResponse<List<MonthlyTrendData>>> GetMonthlyTrendsAsync()
-    {
+
         var sixMonthsAgo = DateTime.UtcNow.AddMonths(-5);
         var startDate = new DateTime(sixMonthsAgo.Year, sixMonthsAgo.Month, 1, 0, 0, 0, DateTimeKind.Utc);
 
