@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "BakimZamani.Domain/1.0.0": {
+        "dependencies": {
+          "NUlid": "1.7.3"
+        },
+        "runtime": {
+          "BakimZamani.Domain.dll": {}
+        }
+      },
+      "NUlid/1.7.3": {
+        "runtime": {
+          "lib/net6.0/NUlid.dll": {
+            "assemblyVersion": "1.7.3.0",
+            "fileVersion": "1.7.3.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BakimZamani.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NUlid/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AXxv7eF+3REXlGLojlN4zXzvesgxiC0/Jq66Qn5L+hhw+NBCK60douGZBI+6ZTAZHRE2xg7AyCEj8cqCKp/U5w==",
+      "path": "nulid/1.7.3",
+      "hashPath": "nulid.1.7.3.nupkg.sha512"
+    }
+  }
+}

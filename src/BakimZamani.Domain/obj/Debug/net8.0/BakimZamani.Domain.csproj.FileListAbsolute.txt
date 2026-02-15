@@ -1,0 +1,13 @@
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\bin\Debug\net8.0\BakimZamani.Domain.deps.json
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\bin\Debug\net8.0\BakimZamani.Domain.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\bin\Debug\net8.0\BakimZamani.Domain.pdb
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.csproj.AssemblyReference.cache
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.AssemblyInfoInputs.cache
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.AssemblyInfo.cs
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.sourcelink.json
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\refint\BakimZamani.Domain.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\BakimZamani.Domain.pdb
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Domain\obj\Debug\net8.0\ref\BakimZamani.Domain.dll

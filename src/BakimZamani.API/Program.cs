@@ -124,6 +124,9 @@ app.MapGet("/health", () => Results.Ok(new { Status = "Healthy", Timestamp = Dat
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    // Apply migrations
+    await context.Database.MigrateAsync();
     
     // Fix admin role if needed
     var adminUser = await context.Users.FirstOrDefaultAsync(u => u.Email == "admin@BakimZamani.com");

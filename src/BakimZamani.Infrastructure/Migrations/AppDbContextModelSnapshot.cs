@@ -74,6 +74,50 @@ namespace BakimZamani.Infrastructure.Migrations
                     b.ToTable("AdminLogs");
                 });
 
+            modelBuilder.Entity("BakimZamani.Domain.Entities.Announcement", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedByAdminId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ExpirationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("TargetAudience")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Announcements");
+                });
+
             modelBuilder.Entity("BakimZamani.Domain.Entities.Appointment", b =>
                 {
                     b.Property<string>("Id")
@@ -281,6 +325,46 @@ namespace BakimZamani.Infrastructure.Migrations
                     b.ToTable("Campaigns");
                 });
 
+            modelBuilder.Entity("BakimZamani.Domain.Entities.FAQ", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FAQs");
+                });
+
             modelBuilder.Entity("BakimZamani.Domain.Entities.Notification", b =>
                 {
                     b.Property<string>("Id")
@@ -462,6 +546,9 @@ namespace BakimZamani.Infrastructure.Migrations
                     b.Property<string>("ApprovedByAdminId")
                         .HasColumnType("character varying(26)");
 
+                    b.Property<string>("BusinessLicenseUrl")
+                        .HasColumnType("text");
+
                     b.Property<int>("CancellationPolicyHours")
                         .HasColumnType("integer");
 
@@ -565,6 +652,9 @@ namespace BakimZamani.Infrastructure.Migrations
 
                     b.Property<int>("TargetGender")
                         .HasColumnType("integer");
+
+                    b.Property<string>("TaxNumber")
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -1219,4 +1309,3 @@ namespace BakimZamani.Infrastructure.Migrations
         }
     }
 }
-

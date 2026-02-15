@@ -1,0 +1,16 @@
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\bin\Debug\net8.0\BakimZamani.Application.deps.json
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\bin\Debug\net8.0\BakimZamani.Application.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\bin\Debug\net8.0\BakimZamani.Application.pdb
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\bin\Debug\net8.0\BakimZamani.Domain.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\bin\Debug\net8.0\BakimZamani.Domain.pdb
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.csproj.AssemblyReference.cache
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.AssemblyInfoInputs.cache
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.AssemblyInfo.cs
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.sourcelink.json
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZam.9E001058.Up2Date
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\refint\BakimZamani.Application.dll
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\BakimZamani.Application.pdb
+C:\Users\ahmet\source\repos\KuaforSepeti\Backend\src\BakimZamani.Application\obj\Debug\net8.0\ref\BakimZamani.Application.dll
