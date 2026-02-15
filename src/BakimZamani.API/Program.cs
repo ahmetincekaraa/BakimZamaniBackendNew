@@ -33,6 +33,8 @@ builder.Services.AddHttpClient(); // For vector search embeddings
 
 // CORS
 
+builder.Services.AddCors(options =>
+{
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.SetIsOriginAllowed(origin => true) // Allow any origin
