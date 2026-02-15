@@ -32,12 +32,10 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient(); // For vector search embeddings
 
 // CORS
-var corsOrigins = builder.Configuration.GetSection("CorsSettings:AllowedOrigins").Get<string[]>() ?? new[] { "http://localhost:3000" };
-builder.Services.AddCors(options =>
-{
+
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins(corsOrigins)
+        policy.SetIsOriginAllowed(origin => true) // Allow any origin
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();
