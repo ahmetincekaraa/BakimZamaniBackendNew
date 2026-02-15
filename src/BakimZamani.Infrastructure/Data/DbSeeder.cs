@@ -22,11 +22,11 @@ public class DbSeeder
         try
         {
             // Seed super admin
-            await SeedProtectedAdmin("admin@BakimZamani.com", "System Administrator");
+            await SeedProtectedAdmin("admin@bakimzamani.com", "System Administrator");
 
             // Seed protected admins
-            await SeedProtectedAdmin("ahmet@BakimZamani.com", "Ahmet YÃ¶netici");
-            await SeedProtectedAdmin("alper@BakimZamani.com", "Alper YÃ¶netici");
+            await SeedProtectedAdmin("ahmet@bakimzamani.com", "Ahmet YÃ¶netici");
+            await SeedProtectedAdmin("alper@bakimzamani.com", "Alper YÃ¶netici");
 
             _logger.LogInformation("All admin users seeded/verified successfully.");
         }

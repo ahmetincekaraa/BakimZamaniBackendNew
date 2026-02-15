@@ -19,9 +19,9 @@ public class EmailService : IEmailService
     // Protected admin email addresses
     private static readonly string[] ProtectedAdminEmails = new[]
     {
-        "admin@BakimZamani.com",
-        "ahmet@BakimZamani.com",
-        "alper@BakimZamani.com"
+        "admin@bakimzamani.com",
+        "ahmet@bakimzamani.com",
+        "alper@bakimzamani.com"
     };
 
     public EmailService(IOptions<EmailSettings> settings, ILogger<EmailService> logger)

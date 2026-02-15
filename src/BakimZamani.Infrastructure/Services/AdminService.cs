@@ -476,13 +476,13 @@ public class AdminService : IAdminService
             // Hierarchy Logic
             foreach (var admin in admins)
             {
-                if (string.Equals(admin.Email, "admin@BakimZamani.com", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(admin.Email, "admin@bakimzamani.com", StringComparison.OrdinalIgnoreCase))
                 {
                     admin.Level = 1;
                     admin.IsProtected = true;
                 }
-                else if (string.Equals(admin.Email, "ahmet@BakimZamani.com", StringComparison.OrdinalIgnoreCase) || 
-                         string.Equals(admin.Email, "alper@BakimZamani.com", StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals(admin.Email, "ahmet@bakimzamani.com", StringComparison.OrdinalIgnoreCase) || 
+                         string.Equals(admin.Email, "alper@bakimzamani.com", StringComparison.OrdinalIgnoreCase))
                 {
                     admin.Level = 2;
                     admin.IsProtected = true;
@@ -576,9 +576,9 @@ public class AdminService : IAdminService
         if (string.IsNullOrEmpty(email)) return false;
         var protectedEmails = new[] 
         { 
-            "admin@BakimZamani.com", 
-            "ahmet@BakimZamani.com", 
-            "alper@BakimZamani.com" 
+            "admin@bakimzamani.com", 
+            "ahmet@bakimzamani.com", 
+            "alper@bakimzamani.com" 
         };
         return protectedEmails.Contains(email.ToLower());
     }
