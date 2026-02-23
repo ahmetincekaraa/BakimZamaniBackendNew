@@ -16,7 +16,7 @@ src/BakimZamani.API/obj
 src/BakimZamani.API/log.*
 
 src/BakimZamani.Application/bin
-src/BakimZamani.Application/obj
+src\BakimZamani.Application\obj*
 src/BakimZamani.Application/log.*
 
 src/BakimZamani.Domain/log.*
@@ -25,6 +25,6 @@ src/BakimZamani.Domain/bin
 
 
 src/BakimZamani.Infrastructure/bin
-src/BakimZamani.Infrastructure/obj
-src/BakimZamani.Infrastructure/build_*
-src/BakimZamani.Infrastructure/log.*
+src\BakimZamani.Infrastructure\obj
+src\BakimZamani.Infrastructure\build_*
+src\BakimZamani.Infrastructure\log.*
