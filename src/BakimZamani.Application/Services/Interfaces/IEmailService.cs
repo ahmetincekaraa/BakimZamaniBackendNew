@@ -16,6 +16,11 @@ public interface IEmailService
     Task SendEmailAsync(IEnumerable<string> to, string subject, string htmlBody);
 
     /// <summary>
+    /// Send a generic email. Throws on failure.
+    /// </summary>
+    Task SendEmailRequiredAsync(string to, string subject, string htmlBody);
+
+    /// <summary>
     /// Notify protected admins about a new salon registration.
     /// </summary>
     Task SendNewSalonNotificationAsync(string salonName, string ownerName, string city);

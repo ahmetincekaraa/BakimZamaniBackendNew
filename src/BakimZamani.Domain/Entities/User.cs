@@ -77,6 +77,16 @@ public class User : BaseEntity
     /// </summary>
     public DateTime? RefreshTokenExpiryTime { get; set; }
 
+    /// <summary>
+    /// Password reset verification code (6-digit).
+    /// </summary>
+    public string? PasswordResetCode { get; set; }
+
+    /// <summary>
+    /// Password reset code expiry time.
+    /// </summary>
+    public DateTime? PasswordResetCodeExpiry { get; set; }
+
     // Navigation properties
     /// <summary>
     /// Salons owned by this user.

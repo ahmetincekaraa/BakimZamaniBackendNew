@@ -133,6 +133,8 @@ public class AuthController : BaseApiController
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
     {
         var result = await _authService.ForgotPasswordAsync(request);
+        if (!result.Success)
+            return BadRequest(result);
         return Ok(result);
     }
 

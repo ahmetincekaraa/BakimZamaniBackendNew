@@ -70,6 +70,25 @@ public class EmailService : IEmailService
         }
     }
 
+    public async Task SendEmailRequiredAsync(string to, string subject, string htmlBody)
+    {
+        var message = new MimeMessage();
+        message.From.Add(new MailboxAddress(_settings.FromName, _settings.FromEmail));
+        message.To.Add(MailboxAddress.Parse(to));
+        message.Subject = subject;
+
+        var builder = new BodyBuilder { HtmlBody = htmlBody };
+        message.Body = builder.ToMessageBody();
+
+        using var client = new SmtpClient();
+        await client.ConnectAsync(_settings.SmtpHost, _settings.SmtpPort, SecureSocketOptions.StartTls);
+        await client.AuthenticateAsync(_settings.SmtpUser, _settings.SmtpPassword);
+        await client.SendAsync(message);
+        await client.DisconnectAsync(true);
+
+        _logger.LogInformation("Email sent successfully to {Recipient}: {Subject}", to, subject);
+    }
+
     public async Task SendNewSalonNotificationAsync(string salonName, string ownerName, string city)
     {
         var subject = $"ðŸ†• Yeni Salon BaÅŸvurusu: {salonName}";

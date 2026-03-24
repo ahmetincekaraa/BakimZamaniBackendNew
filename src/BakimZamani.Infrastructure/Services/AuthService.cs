@@ -25,17 +25,20 @@ public class AuthService : IAuthService
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly IConfiguration _configuration;
+    private readonly IEmailService _emailService;
 
     public AuthService(
         IRepository<User> userRepository,
         IUnitOfWork unitOfWork,
         IMapper mapper,
-        IConfiguration configuration)
+        IConfiguration configuration,
+        IEmailService emailService)
     {
         _userRepository = userRepository;
         _unitOfWork = unitOfWork;
         _mapper = mapper;
         _configuration = configuration;
+        _emailService = emailService;
     }
 
     public async Task<ApiResponse<AuthResponse>> RegisterAsync(RegisterRequest request)
@@ -189,17 +192,91 @@ public class AuthService : IAuthService
         // Don't reveal if user exists
         if (user == null)
         {
-            return ApiResponse.Ok("Åžifre sÄ±fÄ±rlama baÄŸlantÄ±sÄ± gÃ¶nderildi.");
+            return ApiResponse.Ok("Doğrulama kodu e-posta adresinize gönderildi.");
         }
 
-        // TODO: Generate reset token and send email
-        return ApiResponse.Ok("Åžifre sÄ±fÄ±rlama baÄŸlantÄ±sÄ± gÃ¶nderildi.");
+        // Generate 6-digit verification code
+        var code = new Random().Next(100000, 999999).ToString();
+        user.PasswordResetCode = code;
+        user.PasswordResetCodeExpiry = DateTime.UtcNow.AddMinutes(10);
+        await _unitOfWork.SaveChangesAsync();
+
+        // Send email with verification code
+        var htmlBody = $@"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <style>
+        body {{ font-family: 'Segoe UI', Arial, sans-serif; background-color: #F3F4F6; margin: 0; padding: 20px; }}
+        .container {{ max-width: 600px; margin: 0 auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }}
+        .header {{ background: linear-gradient(135deg, #FE725D, #E57999); padding: 32px; text-align: center; color: white; }}
+        .header h1 {{ margin: 0; font-size: 24px; }}
+        .content {{ padding: 32px; text-align: center; }}
+        .code {{ font-size: 36px; font-weight: bold; letter-spacing: 8px; color: #333; background: #F9FAFB; padding: 16px 32px; border-radius: 12px; display: inline-block; margin: 24px 0; }}
+        .footer {{ text-align: center; padding: 16px 32px; color: #9CA3AF; font-size: 12px; }}
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>Bakım Zamanı</h1>
+        </div>
+        <div class='content'>
+            <h2 style='color: #1F2937; margin-bottom: 8px;'>Şifre Sıfırlama</h2>
+            <p style='color: #6B7280;'>Şifrenizi sıfırlamak için aşağıdaki doğrulama kodunu kullanın:</p>
+            <div class='code'>{code}</div>
+            <p style='color: #9CA3AF; font-size: 14px;'>Bu kod 10 dakika içinde geçerliliğini yitirecektir.</p>
+        </div>
+        <div class='footer'>
+            Bu e-posta Bakım Zamanı sistemi tarafından otomatik gönderilmiştir.
+        </div>
+    </div>
+</body>
+</html>";
+
+        try
+        {
+            await _emailService.SendEmailRequiredAsync(user.Email, "Şifre Sıfırlama - Doğrulama Kodu", htmlBody);
+        }
+        catch (Exception)
+        {
+            // Clear the code since email failed
+            user.PasswordResetCode = null;
+            user.PasswordResetCodeExpiry = null;
+            await _unitOfWork.SaveChangesAsync();
+            return ApiResponse.Fail("E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin.");
+        }
+
+        return ApiResponse.Ok("Doğrulama kodu e-posta adresinize gönderildi.");
     }
 
     public async Task<ApiResponse> ResetPasswordAsync(ResetPasswordRequest request)
     {
-        // TODO: Implement password reset with token
-        return ApiResponse.Ok("Åžifre baÅŸarÄ±yla sÄ±fÄ±rlandÄ±.");
+        var user = await _userRepository.Query()
+            .FirstOrDefaultAsync(u => u.Email == request.Email);
+
+        if (user == null)
+        {
+            return ApiResponse.Fail("Geçersiz istek.");
+        }
+
+        // Validate reset code
+        if (string.IsNullOrEmpty(user.PasswordResetCode) ||
+            user.PasswordResetCode != request.Token ||
+            user.PasswordResetCodeExpiry == null ||
+            user.PasswordResetCodeExpiry < DateTime.UtcNow)
+        {
+            return ApiResponse.Fail("Doğrulama kodu geçersiz veya süresi dolmuş.");
+        }
+
+        // Update password and clear reset code
+        user.PasswordHash = HashPassword(request.NewPassword);
+        user.PasswordResetCode = null;
+        user.PasswordResetCodeExpiry = null;
+        await _unitOfWork.SaveChangesAsync();
+
+        return ApiResponse.Ok("Şifreniz başarıyla değiştirildi.");
     }
 
     public async Task<ApiResponse<UserResponse>> GetProfileAsync(string userId)
