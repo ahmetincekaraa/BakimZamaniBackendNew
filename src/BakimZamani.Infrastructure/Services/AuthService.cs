@@ -189,10 +189,9 @@ public class AuthService : IAuthService
         var user = await _userRepository.Query()
             .FirstOrDefaultAsync(u => u.Email == request.Email);
 
-        // Don't reveal if user exists
         if (user == null)
         {
-            return ApiResponse.Ok("Doğrulama kodu e-posta adresinize gönderildi.");
+            return ApiResponse.Fail("Bu e-posta adresiyle kayıtlı bir hesap bulunamadı.");
         }
 
         // Generate 6-digit verification code

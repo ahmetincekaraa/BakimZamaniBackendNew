@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BakimZamani.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c19e95d95d1103dc9cde91f41af0856f6a5abcf3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7238531cd52621aba2879869beeadfba988a9c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BakimZamani.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BakimZamani.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
